@@ -49,10 +49,16 @@ K
 接口说明
 通过本接口，用户可以创建订单
 
+
+
 请求参数：
-参数	类型	是否必填	说明	举例
-action	string	是	接口动作	默认为：api.postorder.create
-appKey	string	是	用户名	
+
+参数|类型|是否必填|说明|举例
+actio|string|是|接口动作|默认为：api.postorder.create
+appKey|string|是|用户名	
+
+
+
 format	string	是	格式	默认为：json
 language	string	是	语言	默认zh_CN
 platform	string	是	平台	

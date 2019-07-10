@@ -89,65 +89,73 @@ weight|double|是|商品重量|
 qty|double|是|商品数量|
 
 参数示列：
+```
 {
-"action": "api.postorder.create",
-"appKey": "",
-"format": "json",
-"language": "zh_CN",
-"platform": "FS",
-"signMethod": "md5",
-"sign": "B2E8A93EFC1D8E39467415A017CC1ADA",
-"timestamp": "2019-06-24 13:59:46",
-"version": "1.0",
-"data": {
-"customerOrderNo": "Test0000013",
-"productCode": "P2019052600000001",
-"warehouseCode": "ZFX_US_LA",
-"buyerName": "test",
-"buyerPhone": "0231234111",
-"buyerEmail": "test@test.com",
-"buyerCountry": "US",
-"buyerState": "TX",
-"buyerCity": "Humble",
-"buyerHouseNo": "",
-"buyerPostcode": "77346",
-"buyerAddress1": "address1",
-"buyerAddress2": "address2",
-"parcels": [
-{
-"parcelNo": "010",
-"parcelDesc": "pacel 004",
-"length": 10,
-"width": 8,
-"height": 2,
-"weight": 114,
-"volume": 0.0001,
-"parcelItems": [
-{
-"itemCode": "TT0001",
-"itemName": "test item 0001",
-"saleCurrency": "USD",
-"salePrice": 12,
-"declaredCurrency": "USD",
-"declaredNameCn": "测试商品",
-"declaredNameEn": "test item",
-"declaredValue": 10,
-"length": 10,
-"width": 10,
-"height": 10,
-"volume": 0.0001,
-"weight": 400,
-"qty": 1
-}]}]}}
+  "action": "api.postorder.create",
+  "appKey": "test",
+  "format": "json",
+  "language": "zh_CN",
+  "platform": "FS",
+  "signMethod": "md5",
+  "sign": "B2E8A93EFC1D8E39467415A017CC1ADA",
+  "timestamp": "2019-07-07 01:55:46",
+  "version": "1.0",
+  "data": {
+    "customerOrderNo": "Test0000013",
+    "productCode": "P2019052600000001",
+    "warehouseCode": "ZFX_US_LA",
+    "buyerName": "test",
+    "buyerPhone": "0231234111",
+    "buyerEmail": "test@test.com",
+    "buyerCountry": "US",
+    "buyerState": "TX",
+    "buyerCity": "Humble",
+    "buyerHouseNo": "",
+    "buyerPostcode": "77346",
+    "buyerAddress1": "add1",
+    "buyerAddress2": "add2",
+    "parcels": [
+      {
+        "parcelNo": "010",
+        "parcelDesc": "pacel 004",
+        "length": 10,
+        "width": 8,
+        "height": 2,
+        "weight": 114,
+        "volume": 0.0001,
+        "parcelItems": [
+          {
+            "itemCode": "TT0001",
+            "itemName": "test item 0001",
+            "saleCurrency": "USD",
+            "salePrice": 12,
+            "declaredCurrency": "USD",
+            "declaredNameCn": "测试商品",
+            "declaredNameEn": "test item",
+            "declaredValue": 10,
+            "length": 10,
+            "width": 10,
+            "height": 10,
+            "volume": 0.0001,
+            "weight": 400,
+            "qty": 1
+          }
+        ]
+      }
+    ]
+  }
+}
+```
 
 响应参数：
-参数	类型	是否必填	说明	举例
-code
-	string	是	返回码	0:代码成功
-msg	string	是	返回消息	
-orderNo	string	是	生成订单号	
+参数|类型|是否必填|说明|举例
+---|---|-------|----|----
+code|string|是|返回码|0:代码成功
+msg|string|是|返回消息	
+orderNo|string|是|生成订单号	
 
 参数示列：
+```
 {
   "code": "0",
   "msg": "操作成功",
@@ -155,6 +163,7 @@ orderNo	string	是	生成订单号
     "orderNo": "PO2019062400000026"
   }
 }
+```
 
 二、取消订单接口（api.postorder.cancel）
 接口说明

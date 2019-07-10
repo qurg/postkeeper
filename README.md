@@ -1,6 +1,9 @@
 # 账号管家
 账号管家API文档
 
+
+
+
 账号管家对接文档
 对接流程描述
 1.	签约完成后，由客服提供账号和token.
@@ -54,7 +57,8 @@ K
 请求参数：
 
 参数|类型|是否必填|说明|举例
-actio|string|是|接口动作|默认为：api.postorder.create
+----|----|----|----|----
+action|string|是|接口动作|默认为：api.postorder.create
 appKey|string|是|用户名	
 
 

@@ -18,10 +18,7 @@
 
 示例
 
-签名串 =
-
-3956C49B4525EAF246B640C9A6F3CE6BactioncreateOutboundOrderappKey1378353828@qq.comdata{"address1":"1 Stafford Crt.","address2":"aaaaaaa","city":"Bayswater North",
-"deliveryWayID":1000020,"eBayOrderID":"3298472983749823480","emailAddress":"abc@winit.com","insuranceTypeID":1000010,"phoneNum":"15900001111","productList":[{"eBayBuyerID":"PowerBuyerDEF456","eBayItemID":"34BayItemI34245","eBaySellerID":"PowerSellerABC123","eBayTransactionID":"2433ctionI234","productCode":"EA0000201","productNum":"1","specification":""}],"recipientName":"mingbao","region":"Victoria","repeatable":"N","sellerOrderNo":"PowerSellerABC123","state":"AU","warehouseID":1000001,"zipCode":"3153"}formatjsonplatformsignMethodmd5timestampversion1.03956C49B4525EAF246B640C9A6F3CE6B
+签名串 = `3956C49B4525EAF246B640C9A6F3CE6BactioncreateOutboundOrderappKey1378353828@qq.comdata{"address1":"1 StaffordCrt.","address2":"aaaaaaa","city":"Bayswater North","deliveryWayID":1000020,"eBayOrderID":"3298472983749823480","emailAddress":"abc@winit.com","insuranceTypeID":1000010,"phoneNum":"15900001111","productList"[{"eBayBuyerID":"PowerBuyerDEF456","eBayItemID":"34BayItemI34245","eBaySellerID":"PowerSellerABC123","eBayTransactionID":"2433ctionI234","productCode":"EA0000201","productNum":"1","specification":""}],"recipientName":"mingbao","region":"Victoria","repeatable":"N","sellerOrderNo":"PowerSellerABC123","state":"AU","warehouseID":1000001,"zipCode":"3153"}formatjsonplatformsignMethodmd5timestampversion1.03956C49B4525EAF246B640C9A6F3CE6B`
 
 2. 生成签名
 对以上拼接后的签名串进行MD5运算，并转换成大写的32位签名。

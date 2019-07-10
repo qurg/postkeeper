@@ -145,6 +145,7 @@ qty|double|是|商品数量|
 ```
 
 响应参数：
+
 参数|类型|是否必填|说明|举例
 ---|---|-------|----|----
 code|string|是|返回码|0:代码成功
@@ -168,46 +169,53 @@ orderNo|string|是|生成订单号
 
 请求参数：
 
-参数	类型	是否必填	说明	举例
-action	string	是	接口动作	默认为：api.postorder. cancel
-appKey	string	是	用户名	
-format	string	是	格式	默认为：json
-language	string	是	语言	默认zh_CN
-platform	string	是	平台	
-signMethod	string	是	加密方式	默认为：md5
-sign	string	是	签名	
-timestamp	string	是	时间戳	默认为当前时间；格式:年-月-日 时:分:秒
-version	string	是	版本号	默认为：1.0
-orderNo	string	是	订单号	
-参数示列：
-{
-    "action": "api.postorder.cancel",
-  "appKey": "XXX",
-  "format": "json",
-  "language": "zh_CN",
-  "platform": "ECPP",
-  "sighMethod": "md5",
-  "sign": "string",
-  "timestamp": "2019-05-16 13:07:46",
-  "version": "1.0",
-  "data": {
-     "orderNo":"PO2019062100000019"
-  }
-}
-响应参数：
-参数	类型	是否必填	说明	举例
-code
-	string	是	返回码	0:代码成功
-msg	string	是	返回消息	
-data	string	是	返回数据	
+参数|类型|是否必填|说明|举例
+---|---|-------|---|----
+action|string|是|接口动作|默认为：api.postorder. cancel
+appKey|string|是|用户名|
+format|string|是|格式|默认为：json
+language|string|是|语言|默认zh_CN
+platform|string|是|平台|
+signMethod|string|是|加密方式|默认为：md5
+sign|string|是|签名|
+timestamp|string|是|时间戳|默认为当前时间；格式:年-月-日 时:分:秒
+version|string|是|版本号|默认为：1.0
+orderNo|string|是|订单号|
 
 参数示列：
+```
+{
+    "action": "api.postorder.cancel",
+	"appKey": "zfx",
+	"format": "json",
+	"language": "zh_CN",
+	"platform": "ECPP",
+	"sighMethod": "md5",
+	"sign": "string",
+	"timestamp": "2019-05-16 13:07:46",
+	"version": "1.0",
+	"data": {
+		 "orderNo":"PO2019062100000019"
+	}
+}
+```
+
+响应参数：
+
+参数|类型|是否必填|说明|举例
+---|---|-------|----|---
+code|string|是|返回码|0:代码成功
+msg|string|是|返回消息|
+data|string|是|返回数据||
+
+参数示列：
+```
 {
   "code": "01040007",
   "msg": "订单已经获取面单，无法作废！订单号：PO2019062100000019",
   "data": ""
 }
-
+```
 
 三、打印面单接口（api.postorder.print）
 接口说明
@@ -215,18 +223,21 @@ data	string	是	返回数据
 
 请求参数：
 
-参数	类型	是否必填	说明	举例
-action	string	是	接口动作	默认为：api.postorder. print
-appKey	string	是	用户名	
-format	string	是	格式	默认为：json
-language	string	是	语言	默认zh_CN
-platform	string	是	平台	默认为：
-signMethod	string	是	加密方式	默认为：md5
-sign	string	是	签名	
-timestamp	string	是	时间戳	默认为当前时间；格式:年-月-日 时:分:秒
-version	string	是	版本号	默认为：1.0
-orderNo	string	是	订单号	
+参数|类型|是否必填|说明|举例
+---|----|------|---|---
+action|string|是|接口动作|默认为：api.postorder. print
+appKey|string|是|用户名|
+format|string|是|格式|默认为：json
+language|string|是|语言|默认zh_CN
+platform|string|是|平台|默认为：
+signMethod|string|是|加密方式|默认为：md5
+sign|string|是|签名|
+timestamp|string|是|时间戳|默认为当前时间；格式:年-月-日 时:分:秒
+version|string|是|版本号|默认为：1.0
+orderNo|string|是|订单号|
+
 参数示列：
+```
 {
   "action": "api.postorder.print",
   "appKey": "XXX",
@@ -241,16 +252,32 @@ orderNo	string	是	订单号
     "orderNo": "PO2019062100000020"
   }
 }
+```
 响应参数：
-参数	类型	是否必填	说明	举例
-code
-	string	是	返回码	0:代码成功
-msg	string	是	返回消息	
-trackingNo	string	是	运单轨迹	
-label	string	是	标签	
+
+参数|类型|是否必填|说明|举例
+---|----|------|---|----
+code|string|是|返回码|0:代码成功
+msg|string|是|返回消息|
+trackingNo|string|是|运单轨迹|
+label|string|是|标签|
 
 参数示列：
-{"code":"0","msg":"","data":{"labelList":[{"trackingNo":"9400110200882066932722","label":"iVBORw0KGgoAAAANSUhEUgAABLAAAAcICAIAAACjMq8dAAAAAXNSR0IArs4c6QAAAARnQU1BAACx\njwv8“}]}}
+```
+{
+  "code": "0",
+  "msg": "",
+  "data": {
+    "labelList": [
+      {
+        "trackingNo": "9400110200882066932722",
+        "label": "iVBORw0KGgoAAAANSUh........
+      }
+    ]
+  }
+}	
+
+```
 
 
 四、确认发货接口（api.postorder.confirm）
@@ -259,18 +286,21 @@ label	string	是	标签
 
 请求参数：
 
-参数	类型	是否必填	说明	举例
-action	string	是	接口动作	默认为：api.postorder. confirm
-appKey	string	是	用户名	
-format	string	是	格式	默认为：json
-language	string	是	语言	默认zh_CN
-platform	string	是	平台	默认为：
-signMethod	string	是	加密方式	默认为：md5
-sign	string	是	签名	
-timestamp	string	是	时间戳	默认为当前时间；格式:年-月-日 时:分:秒
-version	string	是	版本号	默认为：1.0
-orderNos	string	是	订单号	确认发货的订单号
+参数|类型|是否必填|说明|举例
+---|----|------|----|----
+action|string|是|接口动作|默认为：api.postorder. confirm
+appKey|string|是|用户名|
+format|string|是|格式|默认为：json
+language|string|是|语言|默认zh_CN
+platform|string|是|平台|默认为：
+signMethod|string|是|加密方式|默认为：md5
+sign|string|是|签名|
+timestamp|string|是|时间戳|默认为当前时间；格式:年-月-日 时:分:秒
+version|string|是|版本号|默认为：1.0
+orderNos|string|是|订单号|确认发货的订单号
+
 参数示列：
+```
 {
   "action": "api.postorder.confirm",
   "appKey": "XXX",
@@ -282,21 +312,26 @@ orderNos	string	是	订单号	确认发货的订单号
   "timestamp": "2019-05-16 13:07:46",
   "version": "1.0",
   "data": {
-"customerDeliveryNo": "12341",
-"deliveryTime": "2019-07-16 13:07:46",
-"orderNos":["PO2019062100000019","PO2019062100000020"]
+	"customerDeliveryNo": "12341",
+	"deliveryTime": "2019-07-16 13:07:46",
+	"orderNos":["PO2019062100000019","PO2019062100000020"]
   }
 }
+```
+
 响应参数：
-参数	类型	是否必填	说明	举例
-code
-	string	是	返回码	0:代码成功
-msg	string	是	返回消息	
-trackingNo	string	是	运单轨迹	
-label	string	是	标签	
+
+参数|类型|是否必填|说明|举例
+code|string|是|返回码|0:代码成功
+msg|string|是|返回消息|
+trackingNo|string|是|运单轨迹|
+label|string|是|标签|
 
 参数示列：
-{"code":"0","msg":"","data":{"labelList":[{"trackingNo":"9400110200882066932722","label":"iVBORw0KGgoAAAANSUhEUgAABLAAAAcICAIAAACjMq8dAAAAAXNSR0IArs4c6QAAAARnQU1BAACx\njwv8“}]}}
+```
+{
+}
+```
 
 
 五、获取发货单接口（api.postorder.getManifest）
@@ -305,18 +340,20 @@ label	string	是	标签
 
 请求参数：
 
-参数	类型	是否必填	说明	举例
-action	string	是	接口动作	默认为：api.postorder. getManifest
-appKey	string	是	用户名	
-format	string	是	格式	默认为：json
-language	string	是	语言	默认zh_CN
-platform	string	是	平台	默认为：
-signMethod	string	是	加密方式	默认为：md5
-sign	string	是	签名	
-timestamp	string	是	时间戳	默认为当前时间；格式:年-月-日 时:分:秒
-version	string	是	版本号	默认为：1.0
-orderNos	string	是	订单号	确认发货的订单号
+参数|类型|是否必填|说明|举例
+action|string|是|接口动作|默认为：api.postorder. getManifest
+appKey|string|是|用户名|
+format|string|是|格式|默认为：json
+language|string|是|语言|默认zh_CN
+platform|string|是|平台|默认为：
+signMethod|string|是|加密方式|默认为：md5
+sign|string|是|签名|
+timestamp|string|是|时间戳|默认为当前时间；格式:年-月-日 时:分:秒
+version|string|是|版本号|默认为：1.0
+orderNos|string|是|订单号|确认发货的订单号
+
 参数示列：
+```
 {
   "action": "api.postorder.confirm",
   "appKey": "XXX",
@@ -328,17 +365,25 @@ orderNos	string	是	订单号	确认发货的订单号
   "timestamp": "2019-05-16 13:07:46",
   "version": "1.0",
   "data": {
-"manifestNo": "MF2019070700000002"
+	"manifestNo": "MF2019070700000002"
   }
 }
+```
+
 响应参数：
-参数	类型	是否必填	说明	举例
-code
-	string	是	返回码	0:代码成功
-msg	string	是	返回消息	
-trackingNo	string	是	运单轨迹	
-label	string	是	标签	
+
+参数|类型|是否必填|说明|举例
+--|-----|------|---|----
+code| string|是|返回码|0:代码成功
+msg|string|是|返回消息|
+trackingNo|string|是|运单轨迹|
+label|string|是|标签
+
 
 参数示列：
-{"code":"0","msg":"","data":{"labelList":[{"trackingNo":"9400110200882066932722","label":"iVBORw0KGgoAAAANSUhEUgAABLAAAAcICAIAAACjMq8dAAAAAXNSR0IArs4c6QAAAARnQU1BAACx\njwv8“}]}}
+```
+{
+}
+```
+
 

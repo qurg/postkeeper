@@ -23,80 +23,70 @@
 3956C49B4525EAF246B640C9A6F3CE6BactioncreateOutboundOrderappKey1378353828@qq.comdata{"address1":"1 Stafford Crt.","address2":"aaaaaaa","city":"Bayswater North",
 "deliveryWayID":1000020,"eBayOrderID":"3298472983749823480","emailAddress":"abc@winit.com","insuranceTypeID":1000010,"phoneNum":"15900001111","productList":[{"eBayBuyerID":"PowerBuyerDEF456","eBayItemID":"34BayItemI34245","eBaySellerID":"PowerSellerABC123","eBayTransactionID":"2433ctionI234","productCode":"EA0000201","productNum":"1","specification":""}],"recipientName":"mingbao","region":"Victoria","repeatable":"N","sellerOrderNo":"PowerSellerABC123","state":"AU","warehouseID":1000001,"zipCode":"3153"}formatjsonplatformsignMethodmd5timestampversion1.03956C49B4525EAF246B640C9A6F3CE6B
 
-2.生成签名
+2. 生成签名
 对以上拼接后的签名串进行MD5运算，并转换成大写的32位签名。
 签名 =  toUpperCase(MD5(签名串))
 上述示例生成的签名为：3E3D21E8BB9D39BF84B159B88D3BB11F
-
 备注：以下所有接口中的sign字段按照此方法生成。
 
-
-请求说明
-
+*请求说明*
 正式环境URL	http://postkeeper.zhengfx.com/postkeeper/api/service
 验证方式	Token,md5
 格式	json
 字符编码	UTF-8
 请求方式	http
 
-
-
 一、创建订单接口（api.postorder.create）
 接口说明
 通过本接口，用户可以创建订单
-
-
 
 请求参数：
 
 参数|类型|是否必填|说明|举例
 ----|----|----|----|----
 action|string|是|接口动作|默认为：api.postorder.create
-appKey|string|是|用户名	
-
-
-
-format	string	是	格式	默认为：json
-language	string	是	语言	默认zh_CN
-platform	string	是	平台	
-signMethod	string	是	加密方式	默认为：md5
-sign	string	是	签名	
-timestamp	string	是	时间戳	默认为当前时间；格式:年-月-日 时:分:秒
-version	string	是	版本号	默认为：1.0
-customerOrderNo	string	是	客户订单号	
-productCode	string	是	产品编码	
-warehouseCode	string	是	仓库编码	
-buyerName	string	是	买方姓名	
-buyerPhone	string	是	买方手机号码	
-buyerEmail	string	是	买方邮箱	
-buyerCountry	string	是	买方国家	
-buyerState	string	是	买方所在州	
-buyerCity	string	是	买方所在城市	
-buyerHouseNo	string	否	买方房屋编号	
-buyerPostcode	string	是	买方邮政编码	
-buyerAddress1	string	是	买方地址1	
-buyerAddress2	string	是	买方地址2	
-parcelNo	string	是	包裹编号	
-parcelDesc	string	是	包裹描述	
-length	double	是	包裹长度	
-width	double	是	包裹宽度	
-height	double	是	包裹高度	
-weight	double	是	包裹重量	
-volume	double	是	包裹体积	
-itemCode	string	是	商品编码	
-itemName	string	是	商品名称	
-saleCurrency	string	是	销售币种	
-salePrice	double	是	销售单价	
-declaredCurrency	string	是	报关币种	
-declaredNameCn	string	是	报关中文名称	
-declaredNameEn	string	是	报关英文名称	
-declaredValue	double	是	申报价值	
-length	double	是	商品长度	
-width	double	是	商品宽度	
-height	double	是	商品高度	
-volume	double	是	商品体积	
-weight	double	是	商品重量	
-qty	double	是	商品数量	
+appKey|string|是|用户名|	
+format|string|是|格式|默认为：json
+language|string|是|语言|默认zh_CN
+platform|string|是|平台	
+signMethod|string|是|加密方式|默认为：md5
+sign|string|是|签名|
+timestamp|string|是|时间戳|默认为当前时间；格式:年-月-日 时:分:秒
+version|string|是|版本号|默认为：1.0
+customerOrderNo|string|是|客户订单号|
+productCode|string|是|产品编码|
+warehouseCode|string|是|仓库编码|
+buyerName|string|是|买方姓名|
+buyerPhone|string|是|买方手机号码|
+buyerEmail|string|是|买方邮箱|
+buyerCountry|string|是|买方国家|
+buyerState|string|是|买方所在州|
+buyerCity|string|是|买方所在城市|
+buyerHouseNo|string|否|买方房屋编号|
+buyerPostcode|string|是|买方邮政编码|
+buyerAddress1|string|是|买方地址1|
+buyerAddress2|string|是|买方地址2|
+parcelNo|string|是|包裹编号|
+parcelDesc|string|是|包裹描述|
+length|double|是|包裹长度|
+width|double|是|包裹宽度|
+height|double|是|包裹高度|
+weight|double|是|包裹重量|
+volume|double|是|包裹体积|
+itemCode|string|是|商品编码|
+itemName|string|是|商品名称|
+saleCurrency|string|是|销售币种|
+salePrice|double|是|销售单价|
+declaredCurrency|string|是|报关币种|
+declaredNameCn|string|是|报关中文名称|
+declaredNameEn|string|是|报关英文名称|
+declaredValue|double|是|申报价值|
+length|double|是|商品长度|
+width|double|是|商品宽度|
+height|double|是|商品高度|
+volume|double|是|商品体积|
+weight|double|是|商品重量|
+qty|double|是|商品数量|
 
 参数示列：
 {

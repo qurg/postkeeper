@@ -1,27 +1,20 @@
-# 账号管家
-账号管家API文档
-
-
-
-
-账号管家对接文档
+# 账号管家API对接文档
 对接流程描述
-1.	签约完成后，由客服提供账号和token.
-2.	使用：HTTP协议，JSON数据格式。http请求头（header）设置：Content-Type: application/json 
-3.	统一默认请求方法：POST。
+1. 签约完成后，由客服提供账号和token.
+2. 使用：HTTP协议，JSON数据格式。http请求头（header）设置：Content-Type: application/json 
+3. 统一默认请求方法：POST。
 
 
 生成签名
-1.拼接签名串
+1. 拼接签名串
 按字段名的字母顺序拼接（包括data中的json字符串也按此规则），将token放在字符串的两端，如下所示:
 签名串 = token + action + actionValue + appKey + appKeyValue + data + dataValue + format + formatValue + platform + platformValue + signMethod + signMethodValue + timestamp + timestampValue + version + versionValue + token
 
-特别说明：生成签名时需要注意一下几点：
-K
-◆ 签名时参数必须按字母顺序从小到大排序（字典序）；
-◆ 如果参数的值为空不参与签名，如JAVA中参数值为null的，不会参与签名（"" 与 '' 认      为非空，需要参与签名）；
-◆ 参数名区分大小写；
-◆ 在向WINIT发送HTTP请求时必须使用正确的编码格式（默认UTF-8）
+*特别说明*：生成签名时需要注意一下几点：
+签名时参数必须按字母顺序从小到大排序（字典序）；
+* 如果参数的值为空不参与签名，如JAVA中参数值为null的，不会参与签名（"" 与 '' 认      为非空，需要参与签名）；
+* 参数名区分大小写；
+* 在向WINIT发送HTTP请求时必须使用正确的编码格式（默认UTF-8）
 
 示例
 
